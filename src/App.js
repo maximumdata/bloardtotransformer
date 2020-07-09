@@ -139,9 +139,9 @@ class Form extends React.Component {
             <div className="hidden-md-down col-lg-2"></div>
           </div>
         </div>
-        <div className="footer">
+        {/* <div className="footer">
           made with hate and a small brain by your pal, <a href="https://twitter.com/yoitsmiked">mike</a>
-        </div>
+        </div> */}
       </div>
     );
   }
