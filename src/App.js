@@ -79,7 +79,7 @@ class Form extends React.Component {
                 Note: The password resets daily at <b>00:01 UTC</b>, so be sure to grab the latest password every day that you use this.
               </p>
               <p className="money">
-                Hey, please keep in mind that this costs me (mike, haunted_shrub on bloard) money every time you use it. It's not a lot of money, but it will add up if you submit this 100 times a day for multiple days, etc.
+                Hey, please keep in mind that this costs me (mike, haunted_shrub on bloard) money every time few times you use it. It's not a lot of money, but it will add up if you submit this 100 times a day for multiple days, etc.
               </p>
             </div>
             <div className="col-md-12 col-lg-4">
@@ -101,7 +101,7 @@ class Form extends React.Component {
                 <div className="alert alert-danger" role="alert">The server says you have the wrong password. Make sure to say <b>!api</b> in the bloard discord to get the latest one.</div>
               }
               {this.state.apiError && this.state.apiError !== '401' && 
-                <div className="alert alert-danger" role="alert">Something bad happened, I'm sorry. Tell mike about this please.</div>
+                <div className="alert alert-danger" role="alert">Something bad happened when calling the talktotransformer API. Try submitting again in a moment.</div>
               }
             </div>
             <div className="hidden-md-down col-lg-2"></div>
@@ -139,9 +139,6 @@ class Form extends React.Component {
             <div className="hidden-md-down col-lg-2"></div>
           </div>
         </div>
-        {/* <div className="footer">
-          made with hate and a small brain by your pal, <a href="https://twitter.com/yoitsmiked">mike</a>
-        </div> */}
       </div>
     );
   }
