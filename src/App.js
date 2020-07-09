@@ -73,7 +73,9 @@ class Form extends React.Component {
             <div className="hidden-md-down col-lg-2"></div>
             <div className="col-md-12 col-lg-4">
               <p>
-                You'll need the current password for this to work. To get it, say <b>!api</b> in the bloard chat discord, and bloardman will reply with the current day's password.<br />
+                You'll need the current password for this to work. To get it, say <b>!api</b> in the bloard chat discord, and bloardman will reply with the current day's password.
+              </p>
+              <p>
                 Note: The password resets daily at <b>00:01 UTC</b>, so be sure to grab the latest password every day that you use this.
               </p>
               <p className="money">
