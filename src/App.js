@@ -90,7 +90,7 @@ class Form extends React.Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="input">Prompt:</label>
-                  <textarea type="text" className="form-control" id="input" placeholder="Enter input" name="input" onChange={this.inputChangeHandler}/>
+                  <textarea type="text" className="form-control" id="input" placeholder="Enter prompt" name="input" onChange={this.inputChangeHandler}/>
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
               </form>
