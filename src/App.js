@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import './App.css';
 
 const fetchResponse = async ({ key, input }) => {
@@ -21,14 +22,20 @@ const fetchResponse = async ({ key, input }) => {
   }
 }
 
+const getTimeToNewPass = () => {
+  return moment.utc().add('1', 'days').startOf('day').fromNow();
+}
+
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { key: '', input: '', response: null, submittedInput: null, inputError: null, apiError: null };
+    const timeToNewPass = getTimeToNewPass();
+    this.state = { timeToNewPass, key: '', input: '', response: null, submittedInput: null, inputError: null, apiError: null };
   }
 
   onSubmit = async (event) => {
     event.preventDefault();
+    this.setState({ timeToNewPass: getTimeToNewPass() });
     if (!this.state.key || !this.state.input) {
       this.setState({ inputError: true });
       return;
@@ -76,7 +83,7 @@ class Form extends React.Component {
                 You'll need the current password for this to work. To get it, say <b>!api</b> in the bloard chat discord, and bloardman will reply with the current day's password.
               </p>
               <p>
-                Note: The password resets daily at <b>00:01 UTC</b>, so be sure to grab the latest password every day that you use this.
+                Note: The password resets daily at <b>00:01 UTC</b> (that's <span className="timeToNewPass">{this.state.timeToNewPass}</span> from your current local time), so be sure to grab the latest password every day that you use this.
               </p>
               <p className="money">
                 Hey, please keep in mind that this costs me (mike, haunted_shrub on bloard) money every time few times you use it. It's not a lot of money, but it will add up if you submit this 100 times a day for multiple days, etc.
@@ -144,6 +151,6 @@ class Form extends React.Component {
   }
 }
 
-
+// moment.utc().add('1', 'days').startOf('day').fromNow() <--- display this on each render
 
 export default Form;
